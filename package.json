@@ -1,7 +1,7 @@
 {
   "name": "tg-image",
   "version": "1.0.0",
-  "description": "基于Telegram的图床服务",
+  "description": "Image hosting service based on Telegram",
   "main": "index.js",
   "scripts": {
     "dev": "wrangler dev",
@@ -10,7 +10,7 @@
     "setup": "npm run create-kv && npm run deploy"
   },
   "keywords": [
-    "图床",
+    "image hosting",
     "telegram",
     "cloudflare"
   ],
