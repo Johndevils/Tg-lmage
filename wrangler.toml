@@ -3,17 +3,19 @@ compatibility_date = "2023-01-01"
 main = "src/index.js"
 
 [vars]
-# 可以在这里设置默认环境变量
+# You can set default environment variables here
 TG_Bot_Token = "8116484812:AAHIfsz9iFiMwWi2_BwQ1kuUrRWQgkCcdRw"
 TG_Chat_ID = "-1002509744447"
 JWT_SECRET = "your-jwt-secret-key-change-this-in-production"
 
-# 注意：在部署前，请先创建这些 KV 命名空间，并将生成的 ID 填入下面的配置中
-# 使用以下命令创建 KV 命名空间（Wrangler 4.x 版本）：
+# Note: Before deployment, you must first create these KV namespaces
+# and then fill in the generated IDs in the configuration below.
+# Use the following commands to create KV namespaces (for Wrangler version 4.x):
 # npx wrangler kv namespace create "img_url"
 # npx wrangler kv namespace create "users"
 #
-# 或者使用 npm run create-kv 命令自动创建 KV 命名空间并更新配置
+# Or use the command `npm run create-kv` to automatically create KV namespaces 
+# and update the configuration.
 
 [[kv_namespaces]]
 binding = "img_url"
