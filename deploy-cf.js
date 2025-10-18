@@ -4,23 +4,23 @@ const { execSync } = require('child_process');
 const fs = require('fs');
 const path = require('path');
 
-console.log('开始自动部署到Cloudflare...');
+console.log('Starting automatic deployment to Cloudflare...');
 
 try {
-  // 安装依赖
-  console.log('1. 安装依赖...');
+  // Install dependencies
+  console.log('1. Installing dependencies...');
   execSync('npm install', { stdio: 'inherit' });
   
-  // 安装最新版本的wrangler
-  console.log('2. 安装最新版本的wrangler...');
+  // Install the latest version of wrangler
+  console.log('2. Installing the latest version of wrangler...');
   execSync('npm install wrangler@latest --save-dev', { stdio: 'inherit' });
   
-  // 部署到Cloudflare
-  console.log('3. 部署到Cloudflare...');
+  // Deploy to Cloudflare
+  console.log('3. Deploying to Cloudflare...');
   execSync('npx wrangler deploy', { stdio: 'inherit' });
   
-  console.log('✅ 部署成功完成！');
+  console.log('✅ Deployment completed successfully!');
 } catch (error) {
-  console.error('❌ 部署过程中发生错误:', error.message);
+  console.error('❌ An error occurred during deployment:', error.message);
   process.exit(1);
-} 
+}
