@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="mobile-web-app-capable" content="yes">
-    <title>TG-Image | 免费图床</title>
-    <meta name="description" content="基于Telegram的免费图片上传服务，简单高效的图片托管解决方案">
-    <meta name="keywords" content="图床,Telegram,图片上传,免费图床,图片托管">
+    <title>TG-Image | Free Image Hosting</title>
+    <meta name="description" content="Free image upload service based on Telegram. Simple, fast, and efficient image hosting solution.">
+    <meta name="keywords" content="image hosting, Telegram, image upload, free image hosting, picture hosting">
     <meta name="theme-color" content="#4361ee">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="icon" href="./images/favicon.ico" type="image/x-icon">
@@ -24,15 +24,15 @@
     <link rel="stylesheet" href="./css/upload-modern.css">
     <link rel="stylesheet" href="./css/share.css">
     <link rel="stylesheet" href="./css/ultimate-beauty.css">
-    <!-- 图像编辑器样式 -->
+    <!-- Image editor styles -->
     <link rel="stylesheet" href="./css/image-editor.css">
-    <!-- 批量处理器样式 -->
+    <!-- Batch processor styles -->
     <link rel="stylesheet" href="./css/batch-processor.css">
-    <!-- 引入图标库 -->
+    <!-- Icon library -->
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
 </head>
 <body class="dark-mode-transition">
-    <!-- 页面加载动画 -->
+    <!-- Page Loader -->
     <div class="page-loader" id="pageLoader">
         <div class="loader-content">
             <div class="loader">
@@ -45,15 +45,15 @@
         </div>
     </div>
 
-    <!-- 页面过渡动画 -->
+    <!-- Page Transition -->
     <div id="pageTransition" class="page-transition"></div>
 
-    <!-- 页面滚动进度条 -->
+    <!-- Scroll Progress Bar -->
     <div class="scroll-progress-container">
         <div class="scroll-progress-bar" id="scrollProgress"></div>
     </div>
 
-    <!-- 侧边菜单 -->
+    <!-- Side Menu -->
     <div class="side-menu" id="sideMenu">
         <div class="menu-header">
             <div class="menu-logo">
@@ -65,63 +65,63 @@
             </div>
         </div>
         <div class="menu-content">
-            <div class="menu-category">主要功能</div>
+            <div class="menu-category">Main Features</div>
             <a href="/" class="menu-item active">
                 <div class="menu-item-icon"><i class="ri-home-5-line"></i></div>
-                <div class="menu-item-text">首页</div>
-                <div class="menu-tooltip">首页</div>
+                <div class="menu-item-text">Home</div>
+                <div class="menu-tooltip">Home</div>
             </a>
             <a href="/dashboard.html" class="menu-item">
                 <div class="menu-item-icon"><i class="ri-image-2-line"></i></div>
-                <div class="menu-item-text">我的图片</div>
-                <div class="menu-tooltip">我的图片</div>
+                <div class="menu-item-text">My Images</div>
+                <div class="menu-tooltip">My Images</div>
             </a>
             <a href="#" class="menu-item" id="uploadMenuBtn">
                 <div class="menu-item-icon"><i class="ri-upload-cloud-2-line"></i></div>
-                <div class="menu-item-text">上传图片</div>
-                <div class="menu-tooltip">上传图片</div>
+                <div class="menu-item-text">Upload Images</div>
+                <div class="menu-tooltip">Upload Images</div>
             </a>
 
-            <div class="menu-category">图片管理</div>
+            <div class="menu-category">Image Management</div>
             <a href="/favorites.html" class="menu-item">
                 <div class="menu-item-icon"><i class="ri-star-line"></i></div>
-                <div class="menu-item-text">收藏图片</div>
-                <div class="menu-tooltip">收藏图片</div>
+                <div class="menu-item-text">Favorites</div>
+                <div class="menu-tooltip">Favorites</div>
             </a>
             <a href="#" class="menu-item" id="recentMenuItem">
                 <div class="menu-item-icon"><i class="ri-time-line"></i></div>
-                <div class="menu-item-text">最近上传</div>
-                <div class="menu-tooltip">最近上传</div>
+                <div class="menu-item-text">Recent Uploads</div>
+                <div class="menu-tooltip">Recent Uploads</div>
             </a>
             <a href="/tags.html" class="menu-item">
                 <div class="menu-item-icon"><i class="ri-price-tag-3-line"></i></div>
-                <div class="menu-item-text">标签管理</div>
-                <div class="menu-tooltip">标签管理</div>
+                <div class="menu-item-text">Tag Management</div>
+                <div class="menu-tooltip">Tag Management</div>
             </a>
 
-            <div class="menu-category">账户</div>
+            <div class="menu-category">Account</div>
             <a href="/login.html" class="menu-item" id="loginMenuItem">
                 <div class="menu-item-icon"><i class="ri-login-box-line"></i></div>
-                <div class="menu-item-text">登录</div>
-                <div class="menu-tooltip">登录</div>
+                <div class="menu-item-text">Login</div>
+                <div class="menu-tooltip">Login</div>
             </a>
             <a href="/profile.html" class="menu-item" id="profileMenuItem" style="display: none;">
                 <div class="menu-item-icon"><i class="ri-user-settings-line"></i></div>
-                <div class="menu-item-text">用户资料</div>
-                <div class="menu-tooltip">用户资料</div>
+                <div class="menu-item-text">Profile</div>
+                <div class="menu-tooltip">Profile</div>
             </a>
             <a href="/settings.html" class="menu-item" id="settingsMenuItem" style="display: none;">
                 <div class="menu-item-icon"><i class="ri-settings-3-line"></i></div>
-                <div class="menu-item-text">系统设置</div>
-                <div class="menu-tooltip">系统设置</div>
+                <div class="menu-item-text">Settings</div>
+                <div class="menu-tooltip">Settings</div>
             </a>
             <a href="#" class="menu-item" id="logoutMenuItem" style="display: none;">
                 <div class="menu-item-icon"><i class="ri-logout-box-line"></i></div>
-                <div class="menu-item-text">退出登录</div>
-                <div class="menu-tooltip">退出登录</div>
+                <div class="menu-item-text">Logout</div>
+                <div class="menu-tooltip">Logout</div>
             </a>
 
-            <div class="menu-category">更多</div>
+            <div class="menu-category">More</div>
             <a href="https://github.com/xiyewuqiu/new-lmage" target="_blank" class="menu-item">
                 <div class="menu-item-icon"><i class="ri-github-line"></i></div>
                 <div class="menu-item-text">GitHub</div>
@@ -129,13 +129,13 @@
             </a>
             <a href="/help.html" class="menu-item">
                 <div class="menu-item-icon"><i class="ri-question-line"></i></div>
-                <div class="menu-item-text">帮助文档</div>
-                <div class="menu-tooltip">帮助文档</div>
+                <div class="menu-item-text">Help</div>
+                <div class="menu-tooltip">Help</div>
             </a>
             <a href="#" class="menu-item" id="themeMenuItem">
                 <div class="menu-item-icon"><i class="ri-moon-line"></i></div>
-                <div class="menu-item-text">切换主题</div>
-                <div class="menu-tooltip">切换主题</div>
+                <div class="menu-item-text">Toggle Theme</div>
+                <div class="menu-tooltip">Toggle Theme</div>
             </a>
         </div>
         <div class="menu-footer">
@@ -144,13 +144,13 @@
         </div>
     </div>
 
-    <!-- 菜单遮罩层 -->
+    <!-- Menu Overlay -->
     <div class="menu-overlay" id="menuOverlay"></div>
 
     <div class="app-container menu-expanded">
         <header class="header">
             <div class="header-left">
-                <button id="mobileMenuToggle" class="mobile-menu-toggle" aria-label="打开菜单">
+                <button id="mobileMenuToggle" class="mobile-menu-toggle" aria-label="Open Menu">
                     <i class="ri-menu-line"></i>
                 </button>
                 <div class="logo">
@@ -158,15 +158,13 @@
                     <h1>TG-Image</h1>
                 </div>
             </div>
-            <!-- 移除搜索框 -->
-            <div class="header-center">
-            </div>
+            <div class="header-center"></div>
             <div class="header-right">
                 <div class="header-actions">
-                    <button class="header-action-btn" id="uploadBtn" title="上传图片">
+                    <button class="header-action-btn" id="uploadBtn" title="Upload Images">
                         <i class="ri-upload-cloud-2-line"></i>
                     </button>
-                    <label class="theme-toggle" id="themeToggle" aria-label="切换暗色/亮色模式">
+                    <label class="theme-toggle" id="themeToggle" aria-label="Toggle Dark/Light Mode">
                         <input id="switch" type="checkbox">
                         <div class="theme-toggle-icon">
                             <i class="ri-sun-line"></i>
@@ -178,48 +176,47 @@
                             <div class="user-avatar">
                                 <i class="ri-user-3-line"></i>
                             </div>
-                            <span id="userDisplayName">用户</span>
+                            <span id="userDisplayName">User</span>
                             <i class="ri-arrow-down-s-line"></i>
                         </button>
                         <div class="user-dropdown-content">
                             <a href="/dashboard.html" class="dropdown-item">
                                 <i class="ri-image-2-line"></i>
-                                <span>我的图片</span>
+                                <span>My Images</span>
                             </a>
                             <a href="#" class="dropdown-item" id="logoutBtn">
                                 <i class="ri-logout-box-line"></i>
-                                <span>退出登录</span>
+                                <span>Logout</span>
                             </a>
                         </div>
                     </div>
                     <a href="/login.html" class="login-btn" id="loginBtn">
                         <i class="ri-login-box-line"></i>
-                        <span>登录</span>
+                        <span>Login</span>
                     </a>
                 </div>
             </div>
         </header>
 
         <main>
-
             <section class="upload-container">
                 <div class="upload-header">
                     <h2 class="upload-title">
                         <i class="ri-image-add-line"></i>
-                        <span>上传图片</span>
+                        <span>Upload Images</span>
                     </h2>
-                    <p class="upload-subtitle">简单、快速、安全的图片托管服务</p>
+                    <p class="upload-subtitle">Simple, fast, and secure image hosting</p>
                 </div>
 
                 <div class="upload-area" id="dropArea">
                     <div class="upload-icon">
                         <i class="ri-upload-cloud-2-line"></i>
                     </div>
-                    <p class="upload-text">拖放图片到这里或<span class="browse-text">选择文件</span></p>
+                    <p class="upload-text">Drag & drop images here or <span class="browse-text">browse files</span></p>
                     <p class="upload-hint">
-                        <span class="upload-hint-item"><i class="ri-image-line"></i> 支持多种图片格式</span>
-                        <span class="upload-hint-item"><i class="ri-file-copy-line"></i> 支持批量上传</span>
-                        <span class="upload-hint-item"><i class="ri-clipboard-line"></i> 支持<kbd>Ctrl</kbd>+<kbd>V</kbd>粘贴上传</span>
+                        <span class="upload-hint-item"><i class="ri-image-line"></i> Supports multiple image formats</span>
+                        <span class="upload-hint-item"><i class="ri-file-copy-line"></i> Supports batch uploads</span>
+                        <span class="upload-hint-item"><i class="ri-clipboard-line"></i> Supports <kbd>Ctrl</kbd>+<kbd>V</kbd> paste upload</span>
                     </p>
                     <input type="file" id="fileInput" class="file-input" accept="image/*" multiple>
                     <div class="upload-status" id="uploadStatus"></div>
@@ -227,52 +224,52 @@
 
                 <div class="result-container" id="resultContainer" style="display: none;">
                     <div class="result-header">
-                        <h3><i class="ri-check-line"></i> 上传成功！</h3>
-                        <p class="result-subtitle">您的图片已成功上传，可以通过以下方式使用</p>
+                        <h3><i class="ri-check-line"></i> Upload Successful!</h3>
+                        <p class="result-subtitle">Your image has been uploaded successfully. Use it with the following links:</p>
                     </div>
 
                     <div class="image-preview premium-img-container">
-                        <img id="previewImage" src="" alt="上传的图片" class="premium-img premium-img-rounded premium-img-shadow">
+                        <img id="previewImage" src="" alt="Uploaded Image" class="premium-img premium-img-rounded premium-img-shadow">
                         <div class="image-preview-overlay">
                             <i class="ri-zoom-in-line"></i>
-                            <span>点击查看大图</span>
+                            <span>Click to view larger</span>
                         </div>
                     </div>
 
                     <div class="link-group">
                         <div class="link-item">
-                            <label><i class="ri-link"></i> 直接链接:</label>
+                            <label><i class="ri-link"></i> Direct Link:</label>
                             <div class="copy-container">
                                 <input type="text" id="directLink" class="premium-input input-beauty" readonly>
                                 <button class="copy-btn premium-btn premium-btn-primary premium-btn-sm btn-beauty" data-clipboard-target="#directLink">
-                                    <i class="ri-file-copy-line"></i> 复制
+                                    <i class="ri-file-copy-line"></i> Copy
                                 </button>
                             </div>
                         </div>
                         <div class="link-item">
-                            <label><i class="ri-eye-line"></i> 预览链接:</label>
+                            <label><i class="ri-eye-line"></i> Preview Link:</label>
                             <div class="copy-container">
                                 <input type="text" id="previewLink" class="premium-input input-beauty" readonly>
                                 <button class="copy-btn premium-btn premium-btn-primary premium-btn-sm btn-beauty" data-clipboard-target="#previewLink">
-                                    <i class="ri-file-copy-line"></i> 复制
+                                    <i class="ri-file-copy-line"></i> Copy
                                 </button>
                             </div>
                         </div>
                         <div class="link-item">
-                            <label><i class="ri-code-s-slash-line"></i> HTML 代码:</label>
+                            <label><i class="ri-code-s-slash-line"></i> HTML Code:</label>
                             <div class="copy-container">
                                 <input type="text" id="htmlCode" class="premium-input input-beauty" readonly>
                                 <button class="copy-btn premium-btn premium-btn-primary premium-btn-sm btn-beauty" data-clipboard-target="#htmlCode">
-                                    <i class="ri-file-copy-line"></i> 复制
+                                    <i class="ri-file-copy-line"></i> Copy
                                 </button>
                             </div>
                         </div>
                         <div class="link-item">
-                            <label><i class="ri-markdown-line"></i> Markdown 代码:</label>
+                            <label><i class="ri-markdown-line"></i> Markdown Code:</label>
                             <div class="copy-container">
                                 <input type="text" id="mdCode" class="premium-input input-beauty" readonly>
                                 <button class="copy-btn premium-btn premium-btn-primary premium-btn-sm btn-beauty" data-clipboard-target="#mdCode">
-                                    <i class="ri-file-copy-line"></i> 复制
+                                    <i class="ri-file-copy-line"></i> Copy
                                 </button>
                             </div>
                         </div>
@@ -281,19 +278,19 @@
                     <div class="result-actions">
                         <button class="action-btn action-btn-primary btn-beauty-accent" id="editImageBtn">
                             <i class="ri-image-edit-line"></i>
-                            <span>编辑图片</span>
+                            <span>Edit Image</span>
                         </button>
                         <button class="action-btn action-btn-secondary btn-beauty-secondary" id="batchProcessBtn" style="display: none;">
                             <i class="ri-stack-line"></i>
-                            <span>批量处理</span>
+                            <span>Batch Process</span>
                         </button>
                         <button class="action-btn action-btn-accent btn-beauty" id="uploadAgainBtn">
                             <i class="ri-upload-2-line"></i>
-                            <span>再次上传</span>
+                            <span>Upload Again</span>
                         </button>
                         <button class="action-btn action-btn-outline btn-beauty" id="shareBtn">
                             <i class="ri-share-line"></i>
-                            <span>分享</span>
+                            <span>Share</span>
                         </button>
                     </div>
                 </div>
@@ -301,27 +298,24 @@
         </main>
 
         <footer class="footer">
-            <p>&copy; 2024-2025 TG-Image. 基于 <a href="https://telegram.org" target="_blank">Telegram</a> 提供技术支持</p>
+            <p>&copy; 2024-2025 TG-Image. Powered by <a href="https://telegram.org" target="_blank">Telegram</a></p>
         </footer>
     </div>
 
-    <!-- 返回顶部按钮 -->
+    <!-- Back to Top Button -->
     <div class="back-to-top" id="backToTop">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <polyline points="18 15 12 9 6 15"></polyline>
         </svg>
     </div>
 
-    <!-- 移动端菜单遮罩 -->
+    <!-- Mobile Menu Overlay -->
     <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
 
     <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js"></script>
-    <!-- 主题管理器 -->
     <script src="./js/theme-manager.js"></script>
-    <!-- 图像处理和编辑器脚本 -->
     <script src="./js/image-processor.js"></script>
     <script src="./js/image-editor-main.js"></script>
-    <!-- 批量处理器脚本 -->
     <script src="./js/batch-processor.js"></script>
     <script src="./js/app.js"></script>
     <script src="./js/auth.js"></script>
